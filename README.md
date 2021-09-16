@@ -4,7 +4,7 @@
 
 - Landing page, => Titre, paragraphe, Image
 - Lien RS 4 picto
-- 3 articles sur des projets réalisé => Titre, paragraphe, lien
+- 3 articles => Titre, paragraphe, lien
 - Totalement responsive
 
 
@@ -13,4 +13,4 @@
 - No JS
 - Pas de framework
 - Pas de media queries
-- Pas de <div>
+- Pas de div
