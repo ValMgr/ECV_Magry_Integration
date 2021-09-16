@@ -1,4 +1,6 @@
-* Objectif *
+# Intégration
+
+## Objectif
 
 - Landing page, description sur 
 - Lien RS
@@ -6,7 +8,7 @@
 - Totalement responsive
 
 
-** Contraintes
+## Contraintes
 
 - No JS
 - Pas de framework
