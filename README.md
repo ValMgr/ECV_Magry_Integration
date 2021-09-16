@@ -2,9 +2,9 @@
 
 ## Objectif
 
-- Landing page, description sur 
-- Lien RS
-- 2/3 articles sur des projets réalisé
+- Landing page, => Titre, paragraphe, Image
+- Lien RS 4 picto
+- 3 articles sur des projets réalisé => Titre, paragraphe, lien
 - Totalement responsive
 
 
