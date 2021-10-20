@@ -84,7 +84,6 @@ main header{
 }
 
 main > p{
-    font-size: 1.5em;
     margin-bottom : 0;
 }
 
@@ -93,17 +92,17 @@ footer{
 }
 
 main header h1{
-    font-size: 1.6em;
+    font-size: clamp(28px, 3em, 42px);
     margin-bottom: 0.5em;
 }
 
 p{
-    font-size: 1.5em;
+    font-size: clamp(24px, 2em, 32px);
 }
 
 main header p, main header time{
     display: inline-flex;
-    font-size: 1.5em;
+    font-size: clamp(24px, 2em, 32px);
 }
 
 main > header{
