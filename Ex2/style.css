@@ -1,9 +1,258 @@
-body{
-    padding: 10px;
+*[name="A"]{background-color: rgba(255, 0, 0, 0.4)}
+*[name="B"]{background-color: rgba(0, 255, 42, 0.4)}
+*[name="C"]{background-color: rgba(255, 174, 0, 0.4)}
+*[name="D"]{background-color: rgba(251, 255, 0, 0.4)}
+*[name="E"]{background-color: rgba(0, 247, 255, 0.4)}
+*[name="F"]{background-color: rgba(0, 17, 255, 0.4)}
+*[name="G"]{background-color: rgba(174, 0, 255, 0.4)}
+*[name="H"]{background-color: rgba(255, 0, 255, 0.4)}
+*[name="I"]{background-color: rgba(0, 255, 170, 0.4)}
+
+:root{
+    --marge: clamp(10px, 1.5vw, 32px);
 }
 
-body > *{
+body{
+    width: 100vw;
+    margin: 0;
+    min-height: 100vh;    
+    padding: var(--marge);
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body > header, body footer, body article{
     display: block;
-    min-width: 100vw;
-    min-height: 100vh;
+    min-height: 150px;
+}
+
+body > header{
+    width: 100%;
+    grid-area: H;
+    margin-bottom: var(--marge);
+}
+body section:first-of-type{
+    grid-area: A;
+}
+
+body section:last-of-type{
+    grid-area: B;
+}
+
+footer{
+    grid-area: F;
+}
+
+section:last-of-type{
+    display: flex;
+    flex-direction: column;
+}
+
+
+section:last-of-type article:not(:last-of-type){
+    margin-bottom: var(--marge);
+}
+
+section:first-of-type{
+    display: flex;
+    flex-direction: column;
+}
+
+aside{
+    margin-top: var(--marge);
+    width: 100%;
+}
+
+aside article{
+   margin-bottom: var(--marge);
+}
+
+
+main{
+    display: flex;
+    padding: 1em;
+    height: auto;
+    flex-direction: column;
+}
+
+main header{
+    display: flex;
+    flex-direction: column;
+}
+
+main > p{
+    font-size: 1.5em;
+    margin-bottom : 0;
+}
+
+footer{
+    margin-top: var(--marge);
+}
+
+main header h1{
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+p{
+    font-size: 1.5em;
+}
+
+main header p, main header time{
+    display: inline-flex;
+    font-size: 1.5em;
+}
+
+main > header{
+    margin-bottom: 1em;
+}
+
+
+@media screen and (min-width: 768px) {
+    body{
+        display: grid;
+        grid-gap: var(--marge);
+
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+        "H A A A A"
+        "H A A A A"
+        "H A A A A"
+        "H B B B B"
+        "H B B B B"
+        "H B B B B"
+        "H B B B B"
+        "H F F F F";
+    }
+
+    main header{
+        display: block;
+    }
+
+    main > p {
+        margin-left: 0;
+    }
+
+    section:first-of-type{
+        flex-direction: column-reverse;
+    }
+
+    aside{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    footer{
+        margin-top: 0;
+    }
+
+    body > header{
+        margin-bottom: 0;
+    }
+
+}
+
+@media screen and (min-width: 1280px){
+    body{
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+                    "H H H H H H"
+                    "A A A A B B"
+                    "A A A A B B"
+                    "A A A A B B"
+                    "A A A A B B"
+                    "F F F F F F";
+    }
+
+    section:first-of-type{
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        gap: var(--marge);
+    }
+
+   aside{
+       display: flex;
+   }
+
+   aside article{
+       width: 50%;
+   }
+
+   aside article:first-of-type{
+       margin-right: var(--marge);
+       margin-bottom: 0;
+   }
+
+    aside article:last-of-type{
+        margin: 0;
+    }
+
+    section:last-of-type article{
+        height: 25%;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    body{
+        grid-template-areas: 
+        "H A A A A A"
+        "H A A A A A"
+        "H A A A A A"
+        "H B B B B B"
+        "F B B B B B";       
+    }
+
+    section:first-of-type{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: none;
+    }
+
+    main{
+        grid-column: 1 / 4;
+    }
+
+    aside{
+        height: 100%;
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    aside article{
+        width: 100%;
+        height: 50%;
+    }
+
+    aside article:first-child{
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: var(--marge);
+    }
+
+    section:last-of-type{
+        flex-direction: row;
+    }
+
+    section:last-of-type article{
+        height: 100%;
+        width: 25%;
+    }
+
+    section:last-of-type article:not(:last-of-type){
+        margin-right: var(--marge);
+        margin-bottom: 0;;
+    }
+
+    main header{
+        font-size: 2em;
+    }
+
+    main > p{
+        font-size: 2em;
+    }
+
 }
